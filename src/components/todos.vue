@@ -3,7 +3,7 @@ export default {
     name: 'todoItem',
     data () {
       return {
-        todos: [
+        todoEntries: [
             {
                 id: 1, 
                 title: "naam van todo",
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <li v-for="(item, index) in todos">
+    <li v-for="(item, index) in todoEntries">
         <li class="item">{{ item.title }}</li>
     </li>
 </template>

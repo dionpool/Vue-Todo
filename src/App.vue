@@ -1,5 +1,5 @@
 <script setup>
-import todoItem from './components/todoItem.vue'
+import todos from './components/todos.vue'
 </script>
 
 <template>
@@ -9,13 +9,13 @@ import todoItem from './components/todoItem.vue'
 
   <main>
     <div class="todo-wrapper">
-      <form action="#">
-        <input type="text" id="input-item" placeholder="Task...">
-        <button class="addBtn" onclick="addTodo()">Add</button>
+    <form @submit="addToDo">
+      <input type="text" v-model="title" name="title" placeholder="Task...">
+      <button type="submit">Add</button>
     </form>
     
     <ul id="todolist">
-      <todoItem />
+      <todos />
     </ul>
     </div>
   </main>
