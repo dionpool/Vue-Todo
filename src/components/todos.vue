@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-    <li v-for="(item, index) in todoEntries">
-        <li class="item">{{ item.title }}</li>
+    <li v-bind:key="item.id" v-for="(item, index) in todoEntries">
+        {{ item.title }}
     </li>
 </template>
