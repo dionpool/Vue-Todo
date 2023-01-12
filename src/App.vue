@@ -1,5 +1,6 @@
 <script setup>
 import todos from './components/todos.vue'
+import todoItem from './components/todoItem.vue'
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import todos from './components/todos.vue'
 
   <main>
     <div class="todo-wrapper">
-    <form @submit="addToDo">
+     <form @submit="addToDo">
       <input type="text" v-model="title" name="title" placeholder="Task...">
       <button type="submit">Add</button>
     </form>
