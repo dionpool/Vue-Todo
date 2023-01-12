@@ -1,6 +1,6 @@
 <script setup>
 import todos from './components/todos.vue'
-import todoItem from './components/todoItem.vue'
+import addToDo from './components/addToDo.vue'
 </script>
 
 <template>
