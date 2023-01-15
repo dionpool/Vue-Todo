@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h2>My todolist</h2>
         <ul>
             <li v-bind:key="todo.id" v-for="todo in todos">
-                <Todo v-bind:todo="todo" />
+                <Todo @delete-todo="$emit('delete-todo', todo.id)" v-bind:todo="todo" />
             </li>
         </ul>
     </div>
@@ -18,8 +17,14 @@
         },
         props: [
         "todos"
-    ]
+        ],
+        emits: ['delete-todo'],
   }
   </script>
+
   <style scoped>
+  ul {
+    list-style: none;
+    align-items: center;
+  }
   </style>
