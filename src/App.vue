@@ -1,16 +1,21 @@
 <template>
-  <div id="app">
-    <Todos v-bind:todos="todos"/>
-    <AddTodo v-on:add-todo="addTodo"/>
+  <div class="todolist">
+    <div id="app">
+      <Header title="my todo list" />
+      <Todos @delete-todo="deleteTodo" v-bind:todos="todos"/>
+      <AddTodo v-on:add-todo="addTodo"/>
+    </div>
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
 import Todos from './components/todos.vue';
 import AddTodo from './components/addToDo.vue';
 export default {
   name: 'app',
   components: {
+    Header,
     Todos,
     AddTodo
   },
@@ -46,6 +51,9 @@ export default {
     }
   },
   methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id !== id)
+    },
     addTodo(newTodoObj) {
       this.todos = [...this.todos, newTodoObj];
     }
@@ -53,6 +61,12 @@ export default {
 }
 </script>
 <style>
+.todolist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 </style>
 
 
